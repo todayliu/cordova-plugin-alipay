@@ -8,18 +8,12 @@
   <license>MIT license</license>
   <description>支付宝支付插件，alipay payment</description>
   <keywords>alipay, payment</keywords>
-  <repo>https://github.com/charleyw/cordova-plugin-alipay</repo>
-  <issue>https://github.com/charleyw/cordova-plugin-alipay/issues</issue>
+  <repo>https://github.com/todayliu/cordova-plugin-alipay</repo>
+  <issue>https://github.com/todayliu/cordova-plugin-alipay/issues</issue>
 
   <engines>
     <engine name="cordova" version=">=3.4.0"/>
   </engines>
-
-  <preference name="PARTNER_ID"/>
-  <preference name="SELLER_ACCOUNT"/>
-  <preference name="PRIVATE_KEY"/>
-
-  <asset src="www/alipay.js" target="js/alipay.js"/>
 
   <js-module src="www/alipay.js" name="alipay">
     <clobbers target="alipay" />
@@ -27,11 +21,8 @@
 
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
-      <preference name="partner" value="$PARTNER_ID" />
-      <preference name="seller" value="$SELLER_ACCOUNT" />
-      <preference name="privatekey" value="$PRIVATE_KEY" />
       <feature name="AliPay">
-        <param name="android-package" value="wang.imchao.plugin.alipay.AliPayPlugin"/>
+        <param name="android-package" value="org.apache.cordova.pay.alipay.AliPayPlugin"/>
         <param name="onload" value="true" />
       </feature>
     </config-file>
@@ -55,11 +46,8 @@
     </config-file>
 
     <source-file src="src/android/libs/alipaySDK-20150724.jar" target-dir="libs"/>
-
-    <source-file src="src/android/AliPayPlugin.java" target-dir="src/wang/imchao/plugin/alipay"/>
-    <source-file src="src/android/PayResult.java" target-dir="src/wang/imchao/plugin/alipay"/>
-    <source-file src="src/android/Base64.java" target-dir="src/wang/imchao/plugin/alipay"/>
-    <source-file src="src/android/SignUtils.java" target-dir="src/wang/imchao/plugin/alipay"/>
+    <source-file src="src/android/AliPayPlugin.java" target-dir="src/org/apache/cordova/pay/alipay"/>
+    <source-file src="src/android/PayResult.java" target-dir="src/org/apache/cordova/pay/alipay"/>
   </platform>
 
   <platform name="ios">

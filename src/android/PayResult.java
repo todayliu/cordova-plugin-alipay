@@ -1,4 +1,4 @@
-package wang.imchao.plugin.alipay;
+package org.apache.cordova.pay.alipay;
 
 import android.text.TextUtils;
 
